@@ -8,7 +8,7 @@ const sumAll = function (int1, int2) {
 
 	//Checks arguments are whole numbers
 	for (arg of [int1, int2]) {
-		if (typeof arg !== "number" || arg < 0 || arg % 1 !== 0) {
+		if (!Number.isInteger(arg) || arg < 0) {
 			return "ERROR";
 		}
 	}
@@ -17,7 +17,7 @@ const sumAll = function (int1, int2) {
 	let minInt = Math.min(int1, int2);
 
 	for (let i = minInt; i <= maxInt; i++) {
-		sum === 0 ? (sum = i) : (sum += i);
+		sum += i;
 	}
 
 	return sum;
